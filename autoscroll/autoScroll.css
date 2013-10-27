@@ -1,0 +1,86 @@
+/**
+ * CONTAINERS
+ * Unfortunately you can't adjust any of the attributes
+ * because they're all coordinated in the javascript.
+ * 
+ * I'm hoping someone smarter than me can use this as
+ * a starting point and make it cool ;)
+ * 
+ * Change nothing else unless you know what you're doing!
+ */
+
+#topScrollerContainer {	
+	text-align: center;
+	position: fixed;
+	font-size: 1.2em;
+	font-weight: bold;
+	padding: 0;
+	margin: 0;
+	top: 0;
+	left: 0;
+	height: 60px;
+	width: 100%;
+	z-index: 1000;
+}
+
+#bottomScrollerContainer {
+	text-align: center;
+	font-size: 1.2em;
+	font-weight: bold;
+	position: fixed;
+	padding: 0;
+	margin: 0;
+	bottom: 0;
+	left: 0;
+	height: 60px;
+	width: 100%;
+	z-index: 1000;
+}
+
+/**
+ * DISPLAY BARS
+ */
+
+#topScrollerShow {
+	position: fixed;
+	top: 0;
+	left: 0;
+	background: url('topContainer.png') repeat-x;
+	height: 60px;
+	width: 100%;
+	z-index: 1001;
+}
+
+#bottomScrollerShow {
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	background: url('bottomContainer.png') repeat-x;
+	height: 60px;
+	width: 100%;
+	z-index: 1001;
+}
+
+/**
+ * INDICATORS
+ */
+
+#topIndicator {
+	position: relative;
+	margin-left: auto;
+	margin-right: auto;
+	background-image: url('topArrow.png');
+	background-repeat: no-repeat;
+	width: 100px;
+	height: 60px;
+	z-index: 1002;
+}
+
+#bottomIndicator {
+	position: relative;
+	background-image: url('bottomArrow.png');
+	background-repeat: no-repeat;
+	width: 100px;
+	height: 60px;
+	z-index: 1002;
+}

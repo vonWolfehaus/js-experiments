@@ -1,0 +1,122 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+	<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+
+    <title>autoScroll...</title>
+	<link rel="stylesheet" type="text/css" href="prototype.css" />
+	<link rel="stylesheet" type="text/css" href="autoScroll.css" />
+	
+	<!-- Woo! Look at all those dependencies. 
+	Yes ladies and gentlemen, I stand on the shoulders of giants... -->
+    <script type="text/javascript" src="jquery-1.2.6.pack.js"></script>
+    <script type="text/javascript" src="autoScroll.js"></script>
+	<script type="text/javascript" src="jquery.dimensions.pack.js"></script>
+	
+	<script type="text/javascript" src="jquery.pngFix.pack.js"></script>	
+	<script type="text/javascript"> 
+    $(document).ready(function(){ 
+		$(document).pngFix(); 
+	});
+	</script>
+  </head>
+  <body>
+  
+  <div id="topScrollerContainer">  
+	<div id="topIndicator"></div>
+	<div id="topScrollerShow">Hover your mouse over the areas at the top and bottom of the page to scroll.</div>
+  </div>
+  
+  <div id="bottomScrollerContainer">
+	<div id="bottomIndicator"></div>
+	<div id="bottomScrollerShow">Hover your mouse over the areas at the top and bottom of the page to scroll.</div>
+  </div>
+  
+	<div id="container">
+	
+		<div id="modernbricksmenu2">
+			<ul>
+			<li style="margin-left: 1px"><a href="#" title="Home">Home</a></li>
+			<li id="current"><a href="#" title="New">New</a></li>
+			<li><a href="#" title="Revised">Revised</a></li>
+			<li><a href="#" title="Tools">Tools</a></li>	
+			<li><a href="#" title="Forums">Forums</a></li>	
+			</ul>
+		</div>
+		<br />
+		
+		<h3>autoScroll</h3>
+		
+		<div id="topbar">Overview</div>
+		<div id="top"><p>
+		autoScroll utilizes <strong>jQuery</strong>, which made it a lot easier and faster to create than if I did it completely from scratch. It also benefits from some of the cross-browser compatibility that's built-in, leaving me to do only the conceptual work without having to worry too much about browser quirks.
+		</p><p>
+		<strong>Note:</strong> IE can't see the bars when they hide and the cursor is over text. I suspect this has something to do with the z-index bug, but I'd really rather work on my other projects than to piss around with IE's bullshit <em>on my free time</em>.
+		</p><p>
+		So. There's a container div for each scroller that holds the information bar you saw when the page loads, and the arrow indicators that appear when you hover over them. I simply attached mouse listeners to the containers which trigger some comparative logic to determine how fast to scroll and in which direction.
+		</p><p>
+		You'll notice when the window is at the very top or bottom of the page, the scrollbars disappear so that the user can click on menu links, such as those above.
+		</p><p>
+		There's actually only four levels of speed which are determined by where the mouse is within the scrollbar containers. I just compared hard-coded values, which means you can't adjust any of the attributes without digging into the javascript <em>and</em> css. Lame, I know, but this was simply a quick prototype to see if the idea was worth pursuing.
+		</p><p>
+		<a href="autoScroll.rar">Download</a> the whole shoot'n'match. Includes <a href="http://jquery.com/">jQuery</a> and the <a href="http://plugins.jquery.com/project/dimensions">jQuery dimensions plugin</a> (which is also required).
+		</p></div>
+		
+		<div id="topbar">Benefits</div>
+		<div id="top"><p>
+		With these scroll areas, users don't have to look for any scrollbars -- they simply jab their mouse to the top of the page to scroll up and vice versa for down. The further the 'push', the faster it scrolls.
+		</p><p>
+		Users don't have to aim their mouse nearly as precisely.
+		</p><p>
+		Users don't have to track where they're at on in the document since the scroll areas are always in the same place, unlike the scrollbar which changes position <em>and</em> size according to the window's position.
+		</p></div>
+		
+		<div id="topbar">Problems</div>
+		<div id="top"><p>
+		Besides the obvious <strong>inflexibility</strong> (can't reposition or resize the containers as it is, but I'm sure <i>you</i> could change that... ;-) ), <strong>users are jarred</strong> when they click on links that point to intra-page anchors. Try clicking on a menu link at the bottom of this page and you'll see what I mean.
+		</p><p>
+		It's annoying when all you want to do is move your mouse past the top or bottom of the page to access controls in the browser.				
+		</p></div>
+		
+		<div id="topbar">Conclusion</div>
+		<div id="top"><p>
+		Is it worth it? I still say <strong>yes</strong>, because I would much rather jab my mouse up or down to scroll than find the scrollbar, aim my mouse, and click and drag on that tiny little bar on the right there (which, in WinXP, is difficult to distinguish from the bar's background). I also find it easier on the fingers than constantly batting at the mouse wheel. Not to mention the scrollbar resets if your mouse strays too far from the bar.
+		</p><p>
+		I think the flexibility problem can be overcome with <strong>better design planning</strong> and <strong>a bit more effort</strong>. The jarring can be solved by simply passing a variable when 'onclick' is triggered by a link press and some additional logic to deal with such situations.
+		</p><p>
+		I don't think any of this would be necessary if mouse hardware had better wheel mechanisms. This is my ideal wheel:
+		</p><p>
+		<img src="myWheel.jpg" class="aligncenter">
+		</p><p>
+		The idea is that you simply push or pull the wheel's nub to scroll. The more you push, for example, the faster it scrolls up. It's spring-loaded so it automatically stays in the middle if left alone. Ah well...
+		<div id="sig">Corey von Birnbaum<br /><a href="http://coldconstructs.com/">coldconstructs.com</a></div>
+		</p></div>
+		
+		<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Vestibulum nec tellus et elit dictum tincidunt. Duis pede. Quisque tincidunt ipsum in ipsum. Curabitur lacinia est vel orci fringilla aliquet. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec condimentum varius eros. Nulla at enim. Integer adipiscing purus eu neque. Aenean id leo id nulla lacinia tempus. Suspendisse lacus nibh, consectetuer ut, accumsan vel, imperdiet a, velit. Aenean placerat, lorem eget dapibus rhoncus, nisi velit ultricies justo, at viverra tellus risus nec lorem. Donec quis odio. Nullam eget erat sed augue adipiscing tempor. Etiam euismod ante. Sed tristique purus nec felis. In pede justo, interdum sit amet, scelerisque sed, euismod sed, justo. Cras vehicula iaculis urna.
+		</p><p>
+		In ut justo. Maecenas bibendum lorem sit amet ligula. Vestibulum nulla felis, condimentum a, vulputate eget, fringilla sed, dolor. Donec enim nunc, facilisis et, luctus et, interdum ac, lacus. Nulla odio tortor, aliquet id, accumsan ut, posuere vitae, magna. Morbi eget dui in erat vehicula posuere. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Nulla velit. Donec nec justo id lacus bibendum convallis. Proin consectetuer fermentum dui. Suspendisse in eros. Aenean eget neque ut ante faucibus tristique. Aliquam magna quam, imperdiet fringilla, porttitor ut, hendrerit nec, magna. Quisque commodo ultrices elit. Integer vehicula neque eget magna. Donec laoreet. Sed mauris lectus, viverra ut, tincidunt non, lacinia eget, elit.
+		</p><p>
+		Aenean faucibus enim non metus. Maecenas vehicula, pede nec feugiat rutrum, lorem erat semper est, quis venenatis neque felis sit amet nibh. Ut convallis metus ac lacus. Praesent cursus. Etiam tincidunt vestibulum nisl. Aenean id purus eu dolor sollicitudin elementum. In id odio quis sapien suscipit fermentum. Nullam erat est, pellentesque a, pellentesque non, mattis ut, magna. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Fusce enim purus, mattis id, semper ut, blandit eu, mauris. Ut interdum. Nulla ut ipsum. Donec commodo. Phasellus a augue eu quam condimentum porta. Morbi scelerisque. Fusce tincidunt porta tellus. In hac habitasse platea dictumst. Pellentesque ut turpis.
+		</p><p>
+		Quisque a tellus eget tortor dictum euismod. Nam facilisis tempus eros. Nullam quis elit imperdiet urna mollis dapibus. Nulla quis libero lacinia tortor interdum dignissim. Aliquam elit. Sed rhoncus mauris nec turpis. Nunc id leo eget neque sollicitudin commodo. Vivamus fermentum velit egestas mi. Proin sagittis pellentesque felis. Donec malesuada risus. Proin aliquet porta augue. Sed aliquet pharetra velit. Etiam condimentum, mauris sit amet dictum sollicitudin, sem arcu auctor diam, ut tempor sapien ipsum at nulla. Duis ut nisl at sapien convallis congue. Maecenas tellus odio, gravida a, adipiscing auctor, tempor non, augue. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.
+		</p><p>
+		Morbi in nulla. Nam sed justo. Fusce dapibus. Nulla neque justo, faucibus quis, cursus ut, dictum non, odio. Nulla sagittis sodales sem. Nam varius leo in tortor. Aliquam mollis lobortis purus. Etiam dolor enim, porttitor eu, convallis quis, dignissim ultrices, odio. Nam et nisl nec nulla posuere tristique. Donec sodales malesuada massa. Donec mi tellus, vehicula vitae, varius ut, pharetra eget, enim. Donec sit amet massa. Etiam egestas, sapien ac tempus pellentesque, massa mauris sollicitudin ante, ut porttitor turpis ante non sem. Aliquam condimentum facilisis ipsum. In hac habitasse platea dictumst. Nunc est neque, viverra id, molestie vitae, congue id, enim. Maecenas sed felis. Donec velit. Maecenas mollis mi auctor erat. Donec pellentesque.
+
+		</p><p>
+		Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Maecenas elementum interdum orci. Proin consequat, mi in convallis suscipit, est mi faucibus est, in dignissim magna est sit amet libero. Morbi dolor. Nullam libero. Ut in turpis vel neque suscipit lobortis. Curabitur facilisis arcu ut risus. Cras ac libero. Donec ac mi. Phasellus sem. Nulla accumsan sapien eget nunc. Cras euismod. Maecenas sit amet neque. Suspendisse nisl nunc, rhoncus quis, pretium lacinia, porta nec, lectus. Praesent eu nisl id est malesuada luctus. Donec mattis ante id massa. Morbi aliquet. Ut vitae purus. Morbi varius condimentum elit. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Aliquam quis tellus sed mauris tempor pretium.
+		</p><p>
+		Nam lacinia. Morbi semper. Vestibulum velit lacus, vulputate sit amet, vulputate sed, suscipit at, nibh. Cras elementum placerat nibh. Donec tempus, felis sed hendrerit aliquam, justo tellus iaculis urna, at tincidunt est risus vitae urna. Aenean vel odio. Suspendisse non orci. Nulla facilisi. In vel est sed justo dapibus sagittis. Morbi justo lacus, rhoncus ut, eleifend ac, blandit a, odio. Aenean feugiat. Fusce eleifend imperdiet sem. Integer ut lectus vel ipsum condimentum congue. Nunc pretium mollis enim. Duis vehicula tristique diam. Nullam vestibulum elit non mauris.
+		</p><p>
+		Morbi sagittis odio et lacus. Phasellus urna elit, dapibus id, ornare a, laoreet eget, ante. Morbi sapien. Phasellus quis massa et nibh aliquam sagittis. Morbi lacus nisl, porta ac, sagittis id, pellentesque sit amet, nulla. Ut pharetra turpis a urna. Vivamus interdum imperdiet elit. Vivamus vulputate, tellus nec molestie facilisis, urna diam dapibus tortor, et elementum arcu elit a sapien. In hac habitasse platea dictumst. Donec at massa. Aliquam felis. Cras molestie lobortis augue. Quisque a pede a justo pulvinar lobortis. Fusce ac est. Proin semper metus molestie justo. Nullam convallis placerat felis. Maecenas nec justo a justo convallis dapibus. Duis convallis arcu et urna. Donec neque est, consectetuer sed, convallis eu, sagittis id, orci. 
+		</p>
+		<ul>
+			<li><a href="#">bottom linkies!</a></li>
+			<li><a href="#">ho boy</a></li>
+			<li><a href="#">...'kay</a></li>
+		</ul>
+		</div>
+	</div> <!-- end container -->
+
+  </body>
+</html>

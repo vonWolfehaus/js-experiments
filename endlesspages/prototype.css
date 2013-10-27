@@ -1,0 +1,142 @@
+/* STRUCTURE */
+
+body {
+	color: #a0a0a0;
+	font-family: 'Lucida Grande', Verdana, Arial, Sans-Serif;
+	font-size: 0.7em;
+	background: #43443f;
+	margin-top: 0;
+	padding: 0;
+}
+
+#container {
+	display: absolute;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 0;
+	padding: 0;
+	width: 500px;
+	z-index: 1;
+}
+	
+#top {
+	padding: 5px;
+	background-color: #35383d;
+	border-left: 1px solid black;
+	border-right: 1px solid black;
+	border-bottom: 4px solid black;
+	margin-bottom: 20px;
+	display: relative;
+	z-index: 2;
+}
+
+#topbar {
+	color: white;
+	font-weight: bold;
+	margin: 0;
+	padding: 5px;
+	background-color: #000000;
+}
+
+/* menu brought to you by Dynamic Drive 
+ */
+
+#modernbricksmenu2 {
+	padding: 0;
+	width: 100%;
+	border-top: 5px solid black; /* Color theme*/ 
+	background: transparent;
+	voice-family: "\"}\"";
+	voice-family: inherit;
+}
+
+#modernbricksmenu2 ul {
+	margin:0;
+	margin-left: 200px; /*margin between first menu item and left browser edge*/
+	padding: 0;
+	list-style: none;
+}
+
+#modernbricksmenu2 li {
+	display: inline;
+	margin: 0 2px 0 0;
+	padding: 0;
+	text-transform: uppercase;
+}
+
+#modernbricksmenu2 a {
+	float: left;
+	display: block;
+	font: bold 11px Arial;
+	color: black;
+	text-decoration: none;
+	margin: 0 1px 0 0; /*Margin between each menu item*/
+	padding: 5px 10px;
+	background-color: #d5e242; /* Color theme*/ 
+	border-top: 2px solid #929940;
+}
+
+#modernbricksmenu2 a:hover {
+	background-color: #000000; /* Color theme*/ 
+	color: white;
+}
+
+#modernbricksmenu2 #current a { /*currently selected tab*/
+	background-color: #000000; /* Color theme*/ 
+	color: white;
+	border-color: #000000; /* Color theme*/ 
+}
+
+
+/* FONTS */
+
+a {
+	color: #aee959;
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+a:visited {
+	text-decoration: none;
+}
+
+
+/* HEADERS */
+
+h2 {
+	margin: 10px 0 0 10px;
+	color: white;
+	font-size: 1.4em;
+}
+
+h3 {
+	text-align: left;
+	color: white;
+	font-size: 1.3em;
+	margin: 30px 0 20px 10px;
+}
+
+
+/* ALIGNMENT CLASSES */
+
+.aligncenter {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	border: 2px solid black;
+}
+
+/* MISC */
+
+hr {
+	border: 2px solid black;
+	width: 50%;
+}
+
+#sig {
+	text-align: right;
+	
+}
