@@ -2,8 +2,8 @@
 
 ### Canvas-circles
 
-!(https://raw.github.com/vonWolfehaus/js-experiments/master/canvas-circles/spinner.png)
-I know everyone wants to do cool CSS3 loader animations, but it's more fun in canvas.
+![Example spinner](https://raw.github.com/vonWolfehaus/js-experiments/master/canvas-circles/spinner.png)
+I know everyone wants to do cool CSS3 loader animations, but it's more fun in canvas. Also, it took me about 30 minutes from scratch so there's that too.
 
 ### Endless paging
 
