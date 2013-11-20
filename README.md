@@ -1,5 +1,10 @@
 # Experiments
 
+### Canvas-circles
+
+()
+I know everyone wants to do cool CSS3 loader animations, but it's more fun in canvas.
+
 ### Endless paging
 
 [View demo](http://coldconstructs.com/p/endlesspages/endlessPages.html). Demo I created back in 2007 or so, long before it became common on the web.
