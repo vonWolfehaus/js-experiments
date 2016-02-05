@@ -1,0 +1,73 @@
+<!doctype html>
+<html>
+<head>
+	<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+	<meta http-equiv="Pragma" content="no-cache" />
+	<meta http-equiv="Expires" content="0" />
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Github API</title>
+	<!-- <link rel="stylesheet" href="styles.css"> -->
+</head>
+
+<body>
+
+
+
+<!-- <script type="text/javascript" src="riot.min.js"></script> -->
+<script type="text/javascript">
+/*riot.tag('', function() {
+
+});*/
+</script>
+<script type="text/javascript">
+var API_URL = 'https://api.github.com';
+var _get = function(path, callback, scope) {
+	var xhr = new XMLHttpRequest();
+
+	xhr.onreadystatechange = function() {
+		if (this.readyState === 4 && this.status === 200) {
+			var json = null;
+			try {
+				json = JSON.parse(this.responseText);
+			}
+			catch (err) {
+				callback.call(scope || null, err, json);
+			}
+			callback.call(scope || null, null, json);
+		}
+	};
+
+	xhr.onerror = function(err) {
+		callback.call(scope || null, err, null);
+	};
+
+	xhr.open('GET', API_URL + path, true);
+	xhr.setRequestHeader('Accept', 'application/vnd.github.v3+json');
+	xhr.setRequestHeader('Content-Type', 'application/json;charset=UTF-8');
+	xhr.send();
+};
+
+function searchRepos(query, cb) {
+	var path = '/search/';
+	var query = '?q=' + query;
+	_get(path + 'repositories' + query, cb);
+};
+
+searchRepos('user%3AvonWolfehaus&sort=stars&order=desc', function(err, repos) {
+	if (err) return;
+	repos.items.forEach(function(r) {
+		console.log(r)
+		var e = document.createElement('div');
+		e.innerHTML = 'url: '+r.html_url+'<br>';
+		e.innerHTML += 'name: '+r.name+'<br>';
+		e.innerHTML += 'description: '+r.description+'<br>';
+		if (r.homepage !== '') {
+			e.innerHTML += 'website: '+r.homepage;
+		}
+		document.body.appendChild(e);
+	});
+});
+</script>
+</body>
+</html>
